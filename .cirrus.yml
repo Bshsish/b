@@ -1,0 +1,15 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
+    script: "https://raw.githubusercontent.com/ShazuxD7/build_script/master/build_rom"
+    conf: "ENCRYPTED[e94fba5411265b7f0adcdc10a1b6c4bd15eb1309616d681d9cb2fad36ae6542c74553a0119bf6a26ce8964a80048f96a]"
+
+task:
+    name: Builder
+    timeout_in: 120m
+    container:
+      image: shazuxdubuntu/ubuntu:latest
+      cpu: 8
+      memory: 32G
+    build_rom_script:
+      - wget $script
+      - chmod +x build_rom &&./build_rom

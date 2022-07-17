@@ -8,7 +8,7 @@ task:
     timeout_in: 120m
     container:
       image: shazuxdubuntu/ubuntu:latest
-      cpu: 8
+      cpu: 16
       memory: 32G
     build_rom_script:
       - wget $script
